@@ -22,17 +22,16 @@ refresh.addEventListener('click', () => {
 const editTodo = (todoId) => {
   todoInput.value = todos[todoId].value;
   EditTodoId = todoId;
-}
+};
 
 // CHECK A TODO
 const checkTodo = (todoId) => {
   todos = todos.map((todo, index) => ({
-  ...todo,
-  checked: index === todoId ? !todo.checked : todo.checked,
-    }));
-  
-    renderTodos();
-    localStorage.setItem('todos', JSON.stringify(todos));
+    ...todo,
+    checked: index === todoId ? !todo.checked : todo.checked,
+  }));
+  renderTodos();
+  localStorage.setItem('todos', JSON.stringify(todos));
 };
 
 // SAVE TODO
@@ -100,6 +99,15 @@ form.addEventListener('submit', (event) => {
   localStorage.setItem('todos', JSON.stringify(todos));
 });
 
+// DELETE TODO
+const deleteTodo = (todoId) => {
+    todos = todos.filter((todo, index) => index !== todoId);
+    EditTodoId = -1;
+    // re-render
+    renderTodos();
+    localStorage.setItem('todos', JSON.stringify(todos));
+}
+
 // CLICK EVENT LISTENER FOR ALL THE TODOS
 todosListEl.addEventListener('click', (event) => {
   const target = event.target;
@@ -114,12 +122,3 @@ todosListEl.addEventListener('click', (event) => {
   action === 'edit' && editTodo(todoId);
   action === 'delete' && deleteTodo(todoId);
 });
-
-// DELETE TODO
-const deleteTodo = (todoId) => {
-  todos = todos.filter((todo, index) => index !== todoId);
-  EditTodoId = -1;
-  // re-render
-  renderTodos();
-  localStorage.setItem('todos', JSON.stringify(todos));
-}
