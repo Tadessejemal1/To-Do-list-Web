@@ -6,29 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
-    <main>
-      <div class="container">
-        <div class="input-container">
-          <div class='title'>
-            <h1 class="app-title">Today's To Do</h1>
-            <i class='uil uil-refresh'></i>
-          </div>
-          <div class="sub-tittle">
-            <input class="todo-input" type="text" placeholder="Add a Task List ..." />
-            <i id="enter" class="fa-solid fa-arrow-right-to-bracket"></i>
-          </div>
-
-          <div class="to-do-list" id="to-do-container">
-            <ul id="list-item" class="list-item"></ul>
-            <button type="submit" class="clear-completed">
-              Clear all completed
-            </button>
-          </div>
+    <div class="container">
+      <header>
+        <div class='title'>
+          <h1 class="app-title">Today's To Do</h1>
+          <i class='uil uil-refresh'></i>
         </div>
+        <div class="new-todo">
+          <form id="todoform">
+            <input type="text" name="newtodo" id="newtodo" placeholder="Add to your list..." />
+            <button type="submit">
+              <i class="bi bi-plus-circle-fill"></i>
+            </button>
+          </form>
+        </div>
+      </header>
+      <div id="todos-list">
+        <!-- <div class="todo" id="0">
+          <i class="bi bi-circle"></i>
+          <i class="bi bi-check-circle-fill"></i>
+          <p class="">Go get milk.</p>
+          <i class="bi bi-pencil-square"></i>
+          <i class="bi bi-trash"></i>
+        </div> -->
       </div>
-    </main>
+      <div class="notification"></div>
+      <button type="submit" class="clear-completed">
+        Clear all completed
+      </button>
+    </div>
   </body>
 </html>
