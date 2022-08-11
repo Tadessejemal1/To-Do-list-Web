@@ -2,6 +2,33 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/modules/notification.js":
+/*!*************************************!*\
+  !*** ./src/modules/notification.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var notificationEl = document.querySelector('.notification');
+
+var showNotification = function showNotification(msg) {
+  // change the message
+  notificationEl.innerHTML = msg; // notification enter
+
+  notificationEl.classList.add('notif-enter'); // notification leave
+
+  setTimeout(function () {
+    notificationEl.classList.remove('notif-enter');
+  }, 2000);
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (showNotification);
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/main.scss":
 /*!***********************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/main.scss ***!
@@ -611,22 +638,19 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/main.scss */ "./src/styles/main.scss");
+/* harmony import */ var _modules_notification__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/notification */ "./src/modules/notification.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
- // import CreatToDo from './modules/domDisplay.js';
-// CreatToDo();
-// SELECT ELEMENTS
+
 
 var form = document.getElementById('todoform');
 var todoInput = document.getElementById('newtodo');
 var todosListEl = document.getElementById('todos-list');
-var notificationEl = document.querySelector('.notification');
-var refresh = document.getElementById('clear');
-var clearAllBtn = document.querySelector('.clear-completed'); // VARS
+var refresh = document.getElementById('clear'); // VARS
 
 var todos = JSON.parse(localStorage.getItem('todos')) || [];
 var EditTodoId = -1; // 1st render
@@ -654,9 +678,9 @@ var saveTodo = function saveTodo() {
   });
 
   if (isEmpty) {
-    showNotification("Todo's input is empty");
+    (0,_modules_notification__WEBPACK_IMPORTED_MODULE_1__["default"])("Todo's input is empty");
   } else if (isDuplicate) {
-    showNotification('Todo already exists!');
+    (0,_modules_notification__WEBPACK_IMPORTED_MODULE_1__["default"])('Todo already exists!');
   } else {
     if (EditTodoId >= 0) {
       todos = todos.map(function (todo, index) {
@@ -733,20 +757,8 @@ var deleteTodo = function deleteTodo(todoId) {
   renderTodos();
   localStorage.setItem('todos', JSON.stringify(todos));
 }; // SHOW A NOTIFICATION
-
-
-var showNotification = function showNotification(msg) {
-  // change the message
-  notificationEl.innerHTML = msg; // notification enter
-
-  notificationEl.classList.add('notif-enter'); // notification leave
-
-  setTimeout(function () {
-    notificationEl.classList.remove('notif-enter');
-  }, 2000);
-};
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundlea614758d30b46fc085d3.js.map
+//# sourceMappingURL=bundlea6d9d9022efc2eff6be4.js.map

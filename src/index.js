@@ -1,15 +1,10 @@
 import './styles/main.scss';
-// import CreatToDo from './modules/domDisplay.js';
+import showNotification from './modules/notification';
 
-// CreatToDo();
-
-// SELECT ELEMENTS
 const form = document.getElementById('todoform');
 const todoInput = document.getElementById('newtodo');
 const todosListEl = document.getElementById('todos-list');
-const notificationEl = document.querySelector('.notification');
 const refresh = document.getElementById('clear');
-const clearAllBtn = document.querySelector('.clear-completed');
 
 // VARS
 let todos = JSON.parse(localStorage.getItem('todos')) || [];
@@ -17,14 +12,6 @@ let EditTodoId = -1;
 
 // 1st render
 // renderTodos();
-
-// FORM SUBMIT
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-  saveTodo();
-  renderTodos();
-  localStorage.setItem('todos', JSON.stringify(todos));
-});
 
 // clearAll todo lists when refresh the page
 refresh.addEventListener('click', ()=> {
@@ -90,6 +77,14 @@ const renderTodos = () => {
   });
 }
 
+// FORM SUBMIT
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    saveTodo();
+    renderTodos();
+    localStorage.setItem('todos', JSON.stringify(todos));
+  });
+
 // CLICK EVENT LISTENER FOR ALL THE TODOS
 todosListEl.addEventListener('click', (event) => {
   const target = event.target;
@@ -136,15 +131,4 @@ const deleteTodo = (todoId) => {
 }
 
 // SHOW A NOTIFICATION
-const showNotification = (msg) => {
-  // change the message
-  notificationEl.innerHTML = msg;
 
-  // notification enter
-  notificationEl.classList.add('notif-enter');
-
-  // notification leave
-  setTimeout(() => {
-    notificationEl.classList.remove('notif-enter');
-  }, 2000);
-}
