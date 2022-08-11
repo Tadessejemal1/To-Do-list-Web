@@ -18,8 +18,8 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setup
   1. Download the **Zip** file or clone the repo with: ```bash git clone [https://github.com/Tadessejemal1/
-Awosome-Books-ES6.git-  https://github.com/Tadessejemal1/To-Do-List-.git/)
-  2.  ``` To access cloned directory run: ```bash cd/To-Do-List-``` 
+Awosome-todo-list web.git-  https://github.com/Tadessejemal1/To-Do-List-web.git/)
+  2.  ``` To access cloned directory run: ```bash cd/To-Do-List-web``` 
   3. Open it with the live server or just  open the "index.html" file with any browser
 
 ### Usage
