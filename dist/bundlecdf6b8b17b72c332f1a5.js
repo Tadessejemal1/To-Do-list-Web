@@ -655,18 +655,28 @@ var refresh = document.getElementById('clear'); // VARS
 var todos = JSON.parse(localStorage.getItem('todos')) || [];
 var EditTodoId = -1; // 1st render
 // renderTodos();
-// FORM SUBMIT
-
-form.addEventListener('submit', function (event) {
-  event.preventDefault();
-  saveTodo();
-  renderTodos();
-  localStorage.setItem('todos', JSON.stringify(todos));
-}); // clearAll todo lists when refresh the page
+// clearAll todo lists when refresh the page
 
 refresh.addEventListener('click', function () {
   location.reload();
-}); // SAVE TODO
+}); // EDIT A TODO
+
+var editTodo = function editTodo(todoId) {
+  todoInput.value = todos[todoId].value;
+  EditTodoId = todoId;
+}; // CHECK A TODO
+
+
+var checkTodo = function checkTodo(todoId) {
+  todos = todos.map(function (todo, index) {
+    return _objectSpread(_objectSpread({}, todo), {}, {
+      checked: index === todoId ? !todo.checked : todo.checked
+    });
+  });
+  renderTodos();
+  localStorage.setItem('todos', JSON.stringify(todos));
+}; // SAVE TODO
+
 
 var saveTodo = function saveTodo() {
   var todoValue = todoInput.value; // check if the todo is empty
@@ -712,10 +722,17 @@ var renderTodos = function renderTodos() {
   todosListEl.innerHTML = ''; // RENDER TODOS
 
   todos.forEach(function (todo, index) {
-    todosListEl.innerHTML += "\n    <div class=\"todo\" id=".concat(index, ">\n      <i \n        class=\"bi ").concat(todo.checked ? 'bi bi-check2-square' : 'bi bi-app', "\"\n        style=\"color : ").concat(todo.color, "\"\n        data-action=\"check\"\n      ></i>\n      <p class=\"").concat(todo.checked ? 'checked' : '', "\" data-action=\"check\">").concat(todo.value, "</p>\n      <i class=\"bi bi-pencil-square\" data-action=\"edit\"></i>\n      <i class=\"bi bi-trash\" data-action=\"delete\"></i>\n    </div>\n    ");
+    todosListEl.innerHTML += "\n    <div class=\"todo\" id=".concat(index, ">\n      <i \n        class=\"bi ").concat(todo.checked ? 'bi bi-check2-square' : 'bi bi-app', "\"\n        style=\"color : ").concat(todo.color, "\"\n        data-action=\"check\"\n      ></i>\n      <p class=\"").concat(todo.checked ? 'checked' : '', "\" data-action=\"check\">").concat(todo.value, "</p>;\n      <i class=\"bi bi-pencil-square\" data-action=\"edit\"></i>\n      <i class=\"bi bi-trash\" data-action=\"delete\"></i>\n    </div>\n    ");
   });
-}; // CLICK EVENT LISTENER FOR ALL THE TODOS
+}; // FORM SUBMIT
 
+
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
+  saveTodo();
+  renderTodos();
+  localStorage.setItem('todos', JSON.stringify(todos));
+}); // CLICK EVENT LISTENER FOR ALL THE TODOS
 
 todosListEl.addEventListener('click', function (event) {
   var target = event.target;
@@ -729,24 +746,7 @@ todosListEl.addEventListener('click', function (event) {
   action === 'check' && checkTodo(todoId);
   action === 'edit' && editTodo(todoId);
   action === 'delete' && deleteTodo(todoId);
-}); // CHECK A TODO
-
-var checkTodo = function checkTodo(todoId) {
-  todos = todos.map(function (todo, index) {
-    return _objectSpread(_objectSpread({}, todo), {}, {
-      checked: index === todoId ? !todo.checked : todo.checked
-    });
-  });
-  renderTodos();
-  localStorage.setItem('todos', JSON.stringify(todos));
-}; // EDIT A TODO
-
-
-var editTodo = function editTodo(todoId) {
-  todoInput.value = todos[todoId].value;
-  EditTodoId = todoId;
-}; // DELETE TODO
-
+}); // DELETE TODO
 
 var deleteTodo = function deleteTodo(todoId) {
   todos = todos.filter(function (todo, index) {
@@ -756,9 +756,9 @@ var deleteTodo = function deleteTodo(todoId) {
 
   renderTodos();
   localStorage.setItem('todos', JSON.stringify(todos));
-}; // SHOW A NOTIFICATION
+};
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundlea6d9d9022efc2eff6be4.js.map
+//# sourceMappingURL=bundlecdf6b8b17b72c332f1a5.js.map

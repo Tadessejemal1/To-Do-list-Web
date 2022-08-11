@@ -14,9 +14,26 @@ let EditTodoId = -1;
 // renderTodos();
 
 // clearAll todo lists when refresh the page
-refresh.addEventListener('click', ()=> {
-    location.reload();
+refresh.addEventListener('click', () => {
+  location.reload();
 });
+
+// EDIT A TODO
+const editTodo = (todoId) => {
+  todoInput.value = todos[todoId].value;
+  EditTodoId = todoId;
+}
+
+// CHECK A TODO
+const checkTodo = (todoId) => {
+  todos = todos.map((todo, index) => ({
+  ...todo,
+  checked: index === todoId ? !todo.checked : todo.checked,
+    }));
+  
+    renderTodos();
+    localStorage.setItem('todos', JSON.stringify(todos));
+};
 
 // SAVE TODO
 const saveTodo = () => {
@@ -48,7 +65,7 @@ const saveTodo = () => {
 
     todoInput.value = '';
   }
-}
+};
 
 // RENDER TODOS
 const renderTodos = () => {
@@ -56,10 +73,8 @@ const renderTodos = () => {
     todosListEl.innerHTML = '<center>Nothing to do!</center>';
     return;
   }
-
   // CLEAR ELEMENT BEFORE A RE-RENDER
   todosListEl.innerHTML = '';
-
   // RENDER TODOS
   todos.forEach((todo, index) => {
     todosListEl.innerHTML += `
@@ -75,60 +90,36 @@ const renderTodos = () => {
     </div>
     `;
   });
-}
+};
 
 // FORM SUBMIT
 form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    saveTodo();
-    renderTodos();
-    localStorage.setItem('todos', JSON.stringify(todos));
-  });
+  event.preventDefault();
+  saveTodo();
+  renderTodos();
+  localStorage.setItem('todos', JSON.stringify(todos));
+});
 
 // CLICK EVENT LISTENER FOR ALL THE TODOS
 todosListEl.addEventListener('click', (event) => {
   const target = event.target;
   const parentElement = target.parentNode;
-
   if (parentElement.className !== 'todo') return;
   // t o d o id
   const todo = parentElement;
   const todoId = Number(todo.id);
-
   // target action
   const action = target.dataset.action;
-
   action === 'check' && checkTodo(todoId);
   action === 'edit' && editTodo(todoId);
   action === 'delete' && deleteTodo(todoId);
 });
 
-// CHECK A TODO
-const checkTodo = (todoId) => {
-  todos = todos.map((todo, index) => ({
-    ...todo,
-    checked: index === todoId ? !todo.checked : todo.checked,
-  }));
-
-  renderTodos();
-  localStorage.setItem('todos', JSON.stringify(todos));
-}
-
-// EDIT A TODO
-const editTodo = (todoId) => {
-  todoInput.value = todos[todoId].value;
-  EditTodoId = todoId;
-}
-
 // DELETE TODO
 const deleteTodo = (todoId) => {
   todos = todos.filter((todo, index) => index !== todoId);
   EditTodoId = -1;
-
   // re-render
   renderTodos();
   localStorage.setItem('todos', JSON.stringify(todos));
 }
-
-// SHOW A NOTIFICATION
-
