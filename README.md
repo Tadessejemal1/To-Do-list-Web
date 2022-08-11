@@ -23,9 +23,10 @@ Awosome-Books-ES6.git-  https://github.com/Tadessejemal1/To-Do-List-.git/)
   3. Open it with the live server or just  open the "index.html" file with any browser
 
 ### Usage
-  - First you would find the list of books in the "List" section empty.
-  - To add a book to the list .. navigate to the "Add new" section & add the "title"   and the "author", then click Add.
-  - To remove a book from the list click teh remove button displayed next to the book in the "List" section.
+  - First you would clone the repository in the local computer.
+  - Run npm install in the terminal.
+  - run npm start.
+  - npm run build
 
 ## Author
 
