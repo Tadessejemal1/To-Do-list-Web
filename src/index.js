@@ -8,13 +8,15 @@ const form = document.getElementById('todoform');
 const todoInput = document.getElementById('newtodo');
 const todosListEl = document.getElementById('todos-list');
 const notificationEl = document.querySelector('.notification');
+const refresh = document.getElementById('clear');
+const clearAllBtn = document.querySelector('button');
 
 // VARS
 let todos = JSON.parse(localStorage.getItem('todos')) || [];
 let EditTodoId = -1;
 
 // 1st render
-renderTodos();
+// renderTodos();
 
 // FORM SUBMIT
 form.addEventListener('submit', function (event) {
@@ -25,8 +27,15 @@ form.addEventListener('submit', function (event) {
   localStorage.setItem('todos', JSON.stringify(todos));
 });
 
+// clearAll todo lists when refresh the page
+refresh.addEventListener('click', ()=> {
+    localStorage.clear();
+    location.reload();
+});
+
+
 // SAVE TODO
-function saveTodo() {
+const saveTodo = () =>{
   const todoValue = todoInput.value;
 
   // check if the todo is empty
@@ -59,7 +68,7 @@ function saveTodo() {
 }
 
 // RENDER TODOS
-function renderTodos() {
+const renderTodos = () => {
   if (todos.length === 0) {
     todosListEl.innerHTML = '<center>Nothing to do!</center>';
     return;
@@ -73,7 +82,7 @@ function renderTodos() {
     todosListEl.innerHTML += `
     <div class="todo" id=${index}>
       <i 
-        class="bi ${todo.checked ? 'bi-check-circle-fill' : 'bi-circle'}"
+        class="bi ${todo.checked ? 'bi bi-check2-square' : 'bi bi-app'}"
         style="color : ${todo.color}"
         data-action="check"
       ></i>
@@ -105,7 +114,7 @@ todosListEl.addEventListener('click', (event) => {
 });
 
 // CHECK A TODO
-function checkTodo(todoId) {
+const checkTodo = (todoId) => {
   todos = todos.map((todo, index) => ({
     ...todo,
     checked: index === todoId ? !todo.checked : todo.checked,
@@ -116,13 +125,13 @@ function checkTodo(todoId) {
 }
 
 // EDIT A TODO
-function editTodo(todoId) {
+const editTodo = (todoId) => {
   todoInput.value = todos[todoId].value;
   EditTodoId = todoId;
 }
 
 // DELETE TODO
-function deleteTodo(todoId) {
+const deleteTodo = (todoId) => {
   todos = todos.filter((todo, index) => index !== todoId);
   EditTodoId = -1;
 
@@ -131,8 +140,41 @@ function deleteTodo(todoId) {
   localStorage.setItem('todos', JSON.stringify(todos));
 }
 
+// const clearAll = document.querySelector('.clear-completed');
+//   clearAll.addEventListener('click', () => {
+//     const getting = JSON.parse(localStorage.getItem('list'));
+//     const variable = document.getElementById('todos-list');
+//     for (let i = 0; i < variable.length; i += 1) {
+//       form.removeChild(variable[i]);
+//     }
+//     const empty = [];
+//     for (let i = 0; i < getting.length; i += 1) {
+//       if (getting[i].completed === true) {
+//         continue;
+//       }
+//       empty.push(getting[i]);
+//     }
+//     localStorage.setItem('list', JSON.stringify(empty));
+// });
+
+const clearAll = () => {
+    const localData = JSON.parse(localStorage.getItem('list'));
+    const todoContainer = document.getElementById('todos-list');
+    todoContainer.forEach(i => {
+        if(i.classList.contains('checked')){
+            deleteTodo(i)
+        }
+    });
+    let count = 0;
+    const data = todos.from(localData).filter(i => i.completed);
+    data.map(i => i.index = count += 1);
+    localStorage.setItem('list', JSON.stringify(data));
+}
+
+clearAllBtn.addEventListener('click' , clearAll);
+
 // SHOW A NOTIFICATION
-function showNotification(msg) {
+const showNotification = (msg) => {
   // change the message
   notificationEl.innerHTML = msg;
 
@@ -144,3 +186,4 @@ function showNotification(msg) {
     notificationEl.classList.remove('notif-enter');
   }, 2000);
 }
+

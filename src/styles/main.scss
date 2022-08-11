@@ -3,8 +3,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Ubuntu', monospace;
 }
+
 html {
   font-size: 20px;
 }
@@ -15,12 +15,20 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #f6f6f6;
+}
+
+header {
+  background-color: #fff;
+  background-size: cover;
+  border-radius: 5px 5px;
 }
 
 .container {
+  margin-top: -150px;
   background-color: antiquewhite;
-  width: 500px;
-  height: 600px;
+  width: 600px;
+  height: 150px;
   position: relative;
   overflow: none;
 }
@@ -52,23 +60,21 @@ body {
 .new-todo form input {
   flex: 1;
   height: 40px;
-  background-color: transparent;
-  border: none;
-  border-right: 0px;
+  background-color: #fff;
   outline: transparent;
+  border: none;
   padding-left: 0.5rem;
   font-size: 1rem;
-  color: #fff;
+  color: rgb(22, 22, 22);
 }
 
 .new-todo form button {
   width: 60px;
   height: 40px;
-  font-size: 1rem;
-  background-color: transparent;
-  color: rgb(4, 0, 255);
   border: none;
-  border-left: 0px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: rgb(28, 27, 27);
   cursor: pointer;
 }
 
@@ -77,11 +83,10 @@ body {
 }
 
 #todos-list {
-  height: calc(var(--container-height) - var(--header-height));
   background-color: #fff;
   padding: 0.5rem;
   border: 1px solid rgb(219, 219, 219);
-  overflow: scroll;
+  overflow-y: scroll;
   border-radius: 0 0 5px 5px;
 }
 
@@ -116,11 +121,11 @@ body {
 }
 
 #todos-list .todo .bi-pencil-square {
-  color: rgb(31, 177, 48);
+  color: rgb(171, 175, 169);
 }
 
 #todos-list .todo .bi-trash {
-  color: rgb(236, 82, 82);
+  color: rgb(10, 6, 6);
   margin: 0;
 }
 

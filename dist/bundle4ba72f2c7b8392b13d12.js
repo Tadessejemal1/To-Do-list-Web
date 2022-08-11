@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n  font-family: \"Ubuntu\", monospace;\n}\n\nhtml {\n  font-size: 20px;\n}\n\nbody {\n  width: 100vw;\n  height: 100vh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.container {\n  background-color: antiquewhite;\n  width: 500px;\n  height: 600px;\n  position: relative;\n  overflow: none;\n}\n\n.title {\n  display: flex;\n  justify-content: space-between;\n  margin-right: 20px;\n  margin-left: 3px;\n}\n\n.app-title {\n  margin-bottom: 20px;\n  font-size: 20px;\n  opacity: 0.5;\n}\n\n.new-todo {\n  width: 100%;\n  height: 50px;\n  padding: 0.25rem 0;\n}\n\n.new-todo form {\n  display: flex;\n  align-items: center;\n}\n\n.new-todo form input {\n  flex: 1;\n  height: 40px;\n  background-color: transparent;\n  border: none;\n  border-right: 0px;\n  outline: transparent;\n  padding-left: 0.5rem;\n  font-size: 1rem;\n  color: #fff;\n}\n\n.new-todo form button {\n  width: 60px;\n  height: 40px;\n  font-size: 1rem;\n  background-color: transparent;\n  color: rgb(4, 0, 255);\n  border: none;\n  border-left: 0px;\n  cursor: pointer;\n}\n\n.new-todo form button:hover {\n  text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);\n}\n\n#todos-list {\n  height: calc(var(--container-height) - var(--header-height));\n  background-color: #fff;\n  padding: 0.5rem;\n  border: 1px solid rgb(219, 219, 219);\n  overflow: scroll;\n  border-radius: 0 0 5px 5px;\n}\n\n#todos-list .todo {\n  display: flex;\n  align-items: center;\n  padding: 0.75rem 0.5rem;\n  border-radius: 5px;\n}\n\n#todos-list .todo:hover {\n  background-color: rgba(0, 0, 0, 0.1);\n}\n\n#todos-list .todo * {\n  cursor: pointer;\n  margin-right: 0.5rem;\n}\n\n#todos-list .todo i {\n  font-size: 0.9rem;\n}\n\n#todos-list .todo p {\n  flex: 1;\n  word-break: break-all;\n}\n\n.checked {\n  text-decoration: line-through;\n  color: grey;\n}\n\n#todos-list .todo .bi-pencil-square {\n  color: rgb(31, 177, 48);\n}\n\n#todos-list .todo .bi-trash {\n  color: rgb(236, 82, 82);\n  margin: 0;\n}\n\n.notification {\n  position: absolute;\n  width: calc(3 * var(--contaier-width) / 4);\n  height: 60px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  opacity: 0.9;\n  border-radius: 8px;\n  background-color: rgb(233, 81, 81);\n  top: 10px;\n  right: calc(-3 * var(--contaier-width) / 4);\n  color: #fff;\n  transition: 300ms right ease-in-out;\n}\n\n.notif-enter {\n  right: 10px;\n}\n\n.clear-completed {\n  width: 100%;\n  height: 40px;\n  border: none;\n  color: rgb(64, 60, 60);\n  cursor: pointer;\n}", "",{"version":3,"sources":["webpack://./src/styles/main.scss"],"names":[],"mappings":"AACA;EACE,UAAA;EACA,SAAA;EACA,sBAAA;EACA,gCAAA;AAAF;;AAEA;EACE,eAAA;AACF;;AAEA;EACE,YAAA;EACA,aAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;AACF;;AAEA;EACE,8BAAA;EACA,YAAA;EACA,aAAA;EACA,kBAAA;EACA,cAAA;AACF;;AAEA;EACE,aAAA;EACA,8BAAA;EACA,kBAAA;EACA,gBAAA;AACF;;AAEA;EACE,mBAAA;EACA,eAAA;EACA,YAAA;AACF;;AAEA;EACE,WAAA;EACA,YAAA;EACA,kBAAA;AACF;;AAEA;EACE,aAAA;EACA,mBAAA;AACF;;AAEA;EACE,OAAA;EACA,YAAA;EACA,6BAAA;EACA,YAAA;EACA,iBAAA;EACA,oBAAA;EACA,oBAAA;EACA,eAAA;EACA,WAAA;AACF;;AAEA;EACE,WAAA;EACA,YAAA;EACA,eAAA;EACA,6BAAA;EACA,qBAAA;EACA,YAAA;EACA,gBAAA;EACA,eAAA;AACF;;AAEA;EACE,4CAAA;AACF;;AAEA;EACE,4DAAA;EACA,sBAAA;EACA,eAAA;EACA,oCAAA;EACA,gBAAA;EACA,0BAAA;AACF;;AAEA;EACE,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,kBAAA;AACF;;AAEA;EACE,oCAAA;AACF;;AAEA;EACE,eAAA;EACA,oBAAA;AACF;;AAEA;EACE,iBAAA;AACF;;AAEA;EACE,OAAA;EACA,qBAAA;AACF;;AAEA;EACE,6BAAA;EACA,WAAA;AACF;;AAEA;EACE,uBAAA;AACF;;AAEA;EACE,uBAAA;EACA,SAAA;AACF;;AAEA;EACE,kBAAA;EACA,0CAAA;EACA,YAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,YAAA;EACA,kBAAA;EACA,kCAAA;EACA,SAAA;EACA,2CAAA;EACA,WAAA;EACA,mCAAA;AACF;;AAEA;EACE,WAAA;AACF;;AAEA;EACE,WAAA;EACA,YAAA;EACA,YAAA;EACA,sBAAA;EACA,eAAA;AACF","sourcesContent":["\r\n* {\r\n  padding: 0;\r\n  margin: 0;\r\n  box-sizing: border-box;\r\n  font-family: 'Ubuntu', monospace;\r\n}\r\nhtml {\r\n  font-size: 20px;\r\n}\r\n\r\nbody {\r\n  width: 100vw;\r\n  height: 100vh;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\n.container {\r\n  background-color: antiquewhite;\r\n  width: 500px;\r\n  height: 600px;\r\n  position: relative;\r\n  overflow: none;\r\n}\r\n\r\n.title {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  margin-right: 20px;\r\n  margin-left: 3px;\r\n}\r\n\r\n.app-title {\r\n  margin-bottom: 20px;\r\n  font-size: 20px;\r\n  opacity: 0.5;\r\n}\r\n\r\n.new-todo {\r\n  width: 100%;\r\n  height: 50px;\r\n  padding: 0.25rem 0;\r\n}\r\n\r\n.new-todo form {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.new-todo form input {\r\n  flex: 1;\r\n  height: 40px;\r\n  background-color: transparent;\r\n  border: none;\r\n  border-right: 0px;\r\n  outline: transparent;\r\n  padding-left: 0.5rem;\r\n  font-size: 1rem;\r\n  color: #fff;\r\n}\r\n\r\n.new-todo form button {\r\n  width: 60px;\r\n  height: 40px;\r\n  font-size: 1rem;\r\n  background-color: transparent;\r\n  color: rgb(4, 0, 255);\r\n  border: none;\r\n  border-left: 0px;\r\n  cursor: pointer;\r\n}\r\n\r\n.new-todo form button:hover {\r\n  text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);\r\n}\r\n\r\n#todos-list {\r\n  height: calc(var(--container-height) - var(--header-height));\r\n  background-color: #fff;\r\n  padding: 0.5rem;\r\n  border: 1px solid rgb(219, 219, 219);\r\n  overflow: scroll;\r\n  border-radius: 0 0 5px 5px;\r\n}\r\n\r\n#todos-list .todo {\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 0.75rem 0.5rem;\r\n  border-radius: 5px;\r\n}\r\n\r\n#todos-list .todo:hover {\r\n  background-color: rgba(0, 0, 0, 0.1);\r\n}\r\n\r\n#todos-list .todo * {\r\n  cursor: pointer;\r\n  margin-right: 0.5rem;\r\n}\r\n\r\n#todos-list .todo i {\r\n  font-size: 0.9rem;\r\n}\r\n\r\n#todos-list .todo p {\r\n  flex: 1;\r\n  word-break: break-all;\r\n}\r\n\r\n.checked {\r\n  text-decoration: line-through;\r\n  color: grey;\r\n}\r\n\r\n#todos-list .todo .bi-pencil-square {\r\n  color: rgb(31, 177, 48);\r\n}\r\n\r\n#todos-list .todo .bi-trash {\r\n  color: rgb(236, 82, 82);\r\n  margin: 0;\r\n}\r\n\r\n.notification {\r\n  position: absolute;\r\n  width: calc(3 * var(--contaier-width) / 4);\r\n  height: 60px;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  opacity: 0.9;\r\n  border-radius: 8px;\r\n  background-color: rgb(233, 81, 81);\r\n  top: 10px;\r\n  right: calc(-3 * var(--contaier-width) / 4);\r\n  color: #fff;\r\n  transition: 300ms right ease-in-out;\r\n}\r\n\r\n.notif-enter {\r\n  right: 10px;\r\n}\r\n\r\n.clear-completed {\r\n  width: 100%;\r\n  height: 40px;\r\n  border: none;\r\n  color: rgb(64, 60, 60);\r\n  cursor: pointer;\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n}\n\nhtml {\n  font-size: 20px;\n}\n\nbody {\n  width: 100vw;\n  height: 100vh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: #f6f6f6;\n}\n\nheader {\n  background-color: #fff;\n  background-size: cover;\n  border-radius: 5px 5px;\n}\n\n.container {\n  margin-top: -150px;\n  background-color: antiquewhite;\n  width: 600px;\n  height: 150px;\n  position: relative;\n  overflow: none;\n}\n\n.title {\n  display: flex;\n  justify-content: space-between;\n  margin-right: 20px;\n  margin-left: 3px;\n}\n\n.app-title {\n  margin-bottom: 20px;\n  font-size: 20px;\n  opacity: 0.5;\n}\n\n.new-todo {\n  width: 100%;\n  height: 50px;\n  padding: 0.25rem 0;\n}\n\n.new-todo form {\n  display: flex;\n  align-items: center;\n}\n\n.new-todo form input {\n  flex: 1;\n  height: 40px;\n  background-color: #fff;\n  outline: transparent;\n  border: none;\n  padding-left: 0.5rem;\n  font-size: 1rem;\n  color: rgb(22, 22, 22);\n}\n\n.new-todo form button {\n  width: 60px;\n  height: 40px;\n  border: none;\n  font-size: 1rem;\n  background-color: #fff;\n  color: rgb(28, 27, 27);\n  cursor: pointer;\n}\n\n.new-todo form button:hover {\n  text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);\n}\n\n#todos-list {\n  background-color: #fff;\n  padding: 0.5rem;\n  border: 1px solid rgb(219, 219, 219);\n  overflow-y: scroll;\n  border-radius: 0 0 5px 5px;\n}\n\n#todos-list .todo {\n  display: flex;\n  align-items: center;\n  padding: 0.75rem 0.5rem;\n  border-radius: 5px;\n}\n\n#todos-list .todo:hover {\n  background-color: rgba(0, 0, 0, 0.1);\n}\n\n#todos-list .todo * {\n  cursor: pointer;\n  margin-right: 0.5rem;\n}\n\n#todos-list .todo i {\n  font-size: 0.9rem;\n}\n\n#todos-list .todo p {\n  flex: 1;\n  word-break: break-all;\n}\n\n.checked {\n  text-decoration: line-through;\n  color: grey;\n}\n\n#todos-list .todo .bi-pencil-square {\n  color: rgb(171, 175, 169);\n}\n\n#todos-list .todo .bi-trash {\n  color: rgb(10, 6, 6);\n  margin: 0;\n}\n\n.notification {\n  position: absolute;\n  width: calc(3 * var(--contaier-width) / 4);\n  height: 60px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  opacity: 0.9;\n  border-radius: 8px;\n  background-color: rgb(233, 81, 81);\n  top: 10px;\n  right: calc(-3 * var(--contaier-width) / 4);\n  color: #fff;\n  transition: 300ms right ease-in-out;\n}\n\n.notif-enter {\n  right: 10px;\n}\n\n.clear-completed {\n  width: 100%;\n  height: 40px;\n  border: none;\n  color: rgb(64, 60, 60);\n  cursor: pointer;\n  border-bottom: 1px solid;\n}", "",{"version":3,"sources":["webpack://./src/styles/main.scss"],"names":[],"mappings":"AACA;EACE,UAAA;EACA,SAAA;EACA,sBAAA;AAAF;;AAGA;EACE,eAAA;AAAF;;AAGA;EACE,YAAA;EACA,aAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,yBAAA;AAAF;;AAGA;EACE,sBAAA;EACA,sBAAA;EACA,sBAAA;AAAF;;AAGA;EACE,kBAAA;EACA,8BAAA;EACA,YAAA;EACA,aAAA;EACA,kBAAA;EACA,cAAA;AAAF;;AAGA;EACE,aAAA;EACA,8BAAA;EACA,kBAAA;EACA,gBAAA;AAAF;;AAGA;EACE,mBAAA;EACA,eAAA;EACA,YAAA;AAAF;;AAGA;EACE,WAAA;EACA,YAAA;EACA,kBAAA;AAAF;;AAGA;EACE,aAAA;EACA,mBAAA;AAAF;;AAGA;EACE,OAAA;EACA,YAAA;EACA,sBAAA;EACA,oBAAA;EACA,YAAA;EACA,oBAAA;EACA,eAAA;EACA,sBAAA;AAAF;;AAGA;EACE,WAAA;EACA,YAAA;EACA,YAAA;EACA,eAAA;EACA,sBAAA;EACA,sBAAA;EACA,eAAA;AAAF;;AAGA;EACE,4CAAA;AAAF;;AAGA;EACE,sBAAA;EACA,eAAA;EACA,oCAAA;EACA,kBAAA;EACA,0BAAA;AAAF;;AAGA;EACE,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,kBAAA;AAAF;;AAGA;EACE,oCAAA;AAAF;;AAGA;EACE,eAAA;EACA,oBAAA;AAAF;;AAGA;EACE,iBAAA;AAAF;;AAGA;EACE,OAAA;EACA,qBAAA;AAAF;;AAGA;EACE,6BAAA;EACA,WAAA;AAAF;;AAGA;EACE,yBAAA;AAAF;;AAGA;EACE,oBAAA;EACA,SAAA;AAAF;;AAGA;EACE,kBAAA;EACA,0CAAA;EACA,YAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,YAAA;EACA,kBAAA;EACA,kCAAA;EACA,SAAA;EACA,2CAAA;EACA,WAAA;EACA,mCAAA;AAAF;;AAGA;EACE,WAAA;AAAF;;AAGA;EACE,WAAA;EACA,YAAA;EACA,YAAA;EACA,sBAAA;EACA,eAAA;EACA,wBAAA;AAAF","sourcesContent":["\r\n* {\r\n  padding: 0;\r\n  margin: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\nhtml {\r\n  font-size: 20px;\r\n}\r\n\r\nbody {\r\n  width: 100vw;\r\n  height: 100vh;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  background-color: #f6f6f6;\r\n}\r\n\r\nheader {\r\n  background-color: #fff;\r\n  background-size: cover;\r\n  border-radius: 5px 5px;\r\n}\r\n\r\n.container {\r\n  margin-top: -150px;\r\n  background-color: antiquewhite;\r\n  width: 600px;\r\n  height: 150px;\r\n  position: relative;\r\n  overflow: none;\r\n}\r\n\r\n.title {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  margin-right: 20px;\r\n  margin-left: 3px;\r\n}\r\n\r\n.app-title {\r\n  margin-bottom: 20px;\r\n  font-size: 20px;\r\n  opacity: 0.5;\r\n}\r\n\r\n.new-todo {\r\n  width: 100%;\r\n  height: 50px;\r\n  padding: 0.25rem 0;\r\n}\r\n\r\n.new-todo form {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.new-todo form input {\r\n  flex: 1;\r\n  height: 40px;\r\n  background-color: #fff;\r\n  outline: transparent;\r\n  border: none;\r\n  padding-left: 0.5rem;\r\n  font-size: 1rem;\r\n  color: rgb(22, 22, 22);\r\n}\r\n\r\n.new-todo form button {\r\n  width: 60px;\r\n  height: 40px;\r\n  border: none;\r\n  font-size: 1rem;\r\n  background-color: #fff;\r\n  color: rgb(28, 27, 27);\r\n  cursor: pointer;\r\n}\r\n\r\n.new-todo form button:hover {\r\n  text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);\r\n}\r\n\r\n#todos-list {\r\n  background-color: #fff;\r\n  padding: 0.5rem;\r\n  border: 1px solid rgb(219, 219, 219);\r\n  overflow-y: scroll;\r\n  border-radius: 0 0 5px 5px;\r\n}\r\n\r\n#todos-list .todo {\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 0.75rem 0.5rem;\r\n  border-radius: 5px;\r\n}\r\n\r\n#todos-list .todo:hover {\r\n  background-color: rgba(0, 0, 0, 0.1);\r\n}\r\n\r\n#todos-list .todo * {\r\n  cursor: pointer;\r\n  margin-right: 0.5rem;\r\n}\r\n\r\n#todos-list .todo i {\r\n  font-size: 0.9rem;\r\n}\r\n\r\n#todos-list .todo p {\r\n  flex: 1;\r\n  word-break: break-all;\r\n}\r\n\r\n.checked {\r\n  text-decoration: line-through;\r\n  color: grey;\r\n}\r\n\r\n#todos-list .todo .bi-pencil-square {\r\n  color: rgb(171, 175, 169);\r\n}\r\n\r\n#todos-list .todo .bi-trash {\r\n  color: rgb(10, 6, 6);\r\n  margin: 0;\r\n}\r\n\r\n.notification {\r\n  position: absolute;\r\n  width: calc(3 * var(--contaier-width) / 4);\r\n  height: 60px;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  opacity: 0.9;\r\n  border-radius: 8px;\r\n  background-color: rgb(233, 81, 81);\r\n  top: 10px;\r\n  right: calc(-3 * var(--contaier-width) / 4);\r\n  color: #fff;\r\n  transition: 300ms right ease-in-out;\r\n}\r\n\r\n.notif-enter {\r\n  right: 10px;\r\n}\r\n\r\n.clear-completed {\r\n  width: 100%;\r\n  height: 40px;\r\n  border: none;\r\n  color: rgb(64, 60, 60);\r\n  cursor: pointer;\r\n  border-bottom: 1px solid;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -624,21 +624,28 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var form = document.getElementById('todoform');
 var todoInput = document.getElementById('newtodo');
 var todosListEl = document.getElementById('todos-list');
-var notificationEl = document.querySelector('.notification'); // VARS
+var notificationEl = document.querySelector('.notification');
+var refresh = document.getElementById('clear');
+var clearAllBtn = document.querySelector('button'); // VARS
 
 var todos = JSON.parse(localStorage.getItem('todos')) || [];
 var EditTodoId = -1; // 1st render
-
-renderTodos(); // FORM SUBMIT
+// renderTodos();
+// FORM SUBMIT
 
 form.addEventListener('submit', function (event) {
   event.preventDefault();
   saveTodo();
   renderTodos();
   localStorage.setItem('todos', JSON.stringify(todos));
+}); // clearAll todo lists when refresh the page
+
+refresh.addEventListener('click', function () {
+  localStorage.clear();
+  location.reload();
 }); // SAVE TODO
 
-function saveTodo() {
+var saveTodo = function saveTodo() {
   var todoValue = todoInput.value; // check if the todo is empty
 
   var isEmpty = todoValue === ''; // check for duplicate todos
@@ -669,10 +676,10 @@ function saveTodo() {
 
     todoInput.value = '';
   }
-} // RENDER TODOS
+}; // RENDER TODOS
 
 
-function renderTodos() {
+var renderTodos = function renderTodos() {
   if (todos.length === 0) {
     todosListEl.innerHTML = '<center>Nothing to do!</center>';
     return;
@@ -682,9 +689,9 @@ function renderTodos() {
   todosListEl.innerHTML = ''; // RENDER TODOS
 
   todos.forEach(function (todo, index) {
-    todosListEl.innerHTML += "\n    <div class=\"todo\" id=".concat(index, ">\n      <i \n        class=\"bi ").concat(todo.checked ? 'bi-check-circle-fill' : 'bi-circle', "\"\n        style=\"color : ").concat(todo.color, "\"\n        data-action=\"check\"\n      ></i>\n      <p class=\"").concat(todo.checked ? 'checked' : '', "\" data-action=\"check\">").concat(todo.value, "</p>\n      <i class=\"bi bi-pencil-square\" data-action=\"edit\"></i>\n      <i class=\"bi bi-trash\" data-action=\"delete\"></i>\n    </div>\n    ");
+    todosListEl.innerHTML += "\n    <div class=\"todo\" id=".concat(index, ">\n      <i \n        class=\"bi ").concat(todo.checked ? 'bi bi-check2-square' : 'bi bi-app', "\"\n        style=\"color : ").concat(todo.color, "\"\n        data-action=\"check\"\n      ></i>\n      <p class=\"").concat(todo.checked ? 'checked' : '', "\" data-action=\"check\">").concat(todo.value, "</p>\n      <i class=\"bi bi-pencil-square\" data-action=\"edit\"></i>\n      <i class=\"bi bi-trash\" data-action=\"delete\"></i>\n    </div>\n    ");
   });
-} // CLICK EVENT LISTENER FOR ALL THE TODOS
+}; // CLICK EVENT LISTENER FOR ALL THE TODOS
 
 
 todosListEl.addEventListener('click', function (event) {
@@ -701,7 +708,7 @@ todosListEl.addEventListener('click', function (event) {
   action === 'delete' && deleteTodo(todoId);
 }); // CHECK A TODO
 
-function checkTodo(todoId) {
+var checkTodo = function checkTodo(todoId) {
   todos = todos.map(function (todo, index) {
     return _objectSpread(_objectSpread({}, todo), {}, {
       checked: index === todoId ? !todo.checked : todo.checked
@@ -709,16 +716,16 @@ function checkTodo(todoId) {
   });
   renderTodos();
   localStorage.setItem('todos', JSON.stringify(todos));
-} // EDIT A TODO
+}; // EDIT A TODO
 
 
-function editTodo(todoId) {
+var editTodo = function editTodo(todoId) {
   todoInput.value = todos[todoId].value;
   EditTodoId = todoId;
-} // DELETE TODO
+}; // DELETE TODO
 
 
-function deleteTodo(todoId) {
+var deleteTodo = function deleteTodo(todoId) {
   todos = todos.filter(function (todo, index) {
     return index !== todoId;
   });
@@ -726,10 +733,45 @@ function deleteTodo(todoId) {
 
   renderTodos();
   localStorage.setItem('todos', JSON.stringify(todos));
-} // SHOW A NOTIFICATION
+}; // const clearAll = document.querySelector('.clear-completed');
+//   clearAll.addEventListener('click', () => {
+//     const getting = JSON.parse(localStorage.getItem('list'));
+//     const variable = document.getElementById('todos-list');
+//     for (let i = 0; i < variable.length; i += 1) {
+//       form.removeChild(variable[i]);
+//     }
+//     const empty = [];
+//     for (let i = 0; i < getting.length; i += 1) {
+//       if (getting[i].completed === true) {
+//         continue;
+//       }
+//       empty.push(getting[i]);
+//     }
+//     localStorage.setItem('list', JSON.stringify(empty));
+// });
 
 
-function showNotification(msg) {
+var clearAll = function clearAll() {
+  var localData = JSON.parse(localStorage.getItem('list'));
+  var todoContainer = document.getElementById('todos-list');
+  todoContainer.forEach(function (i) {
+    if (i.classList.contains('checked')) {
+      deleteTodo(i);
+    }
+  });
+  var count = 0;
+  var data = todos.from(localData).filter(function (i) {
+    return i.completed;
+  });
+  data.map(function (i) {
+    return i.index = count += 1;
+  });
+  localStorage.setItem('list', JSON.stringify(data));
+};
+
+clearAllBtn.addEventListener('click', clearAll); // SHOW A NOTIFICATION
+
+var showNotification = function showNotification(msg) {
   // change the message
   notificationEl.innerHTML = msg; // notification enter
 
@@ -738,9 +780,9 @@ function showNotification(msg) {
   setTimeout(function () {
     notificationEl.classList.remove('notif-enter');
   }, 2000);
-}
+};
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundleedc6696f00ddc415db5c.js.map
+//# sourceMappingURL=bundle4ba72f2c7b8392b13d12.js.map
