@@ -9,7 +9,7 @@ const todoInput = document.getElementById('newtodo');
 const todosListEl = document.getElementById('todos-list');
 const notificationEl = document.querySelector('.notification');
 const refresh = document.getElementById('clear');
-const clearAllBtn = document.querySelector('button');
+const clearAllBtn = document.querySelector('.clear-completed');
 
 // VARS
 let todos = JSON.parse(localStorage.getItem('todos')) || [];
@@ -19,9 +19,8 @@ let EditTodoId = -1;
 // renderTodos();
 
 // FORM SUBMIT
-form.addEventListener('submit', function (event) {
+form.addEventListener('submit', (event) => {
   event.preventDefault();
-
   saveTodo();
   renderTodos();
   localStorage.setItem('todos', JSON.stringify(todos));
@@ -29,15 +28,12 @@ form.addEventListener('submit', function (event) {
 
 // clearAll todo lists when refresh the page
 refresh.addEventListener('click', ()=> {
-    localStorage.clear();
     location.reload();
 });
 
-
 // SAVE TODO
-const saveTodo = () =>{
+const saveTodo = () => {
   const todoValue = todoInput.value;
-
   // check if the todo is empty
   const isEmpty = todoValue === '';
 
@@ -100,7 +96,6 @@ todosListEl.addEventListener('click', (event) => {
   const parentElement = target.parentNode;
 
   if (parentElement.className !== 'todo') return;
-
   // t o d o id
   const todo = parentElement;
   const todoId = Number(todo.id);
@@ -140,39 +135,6 @@ const deleteTodo = (todoId) => {
   localStorage.setItem('todos', JSON.stringify(todos));
 }
 
-// const clearAll = document.querySelector('.clear-completed');
-//   clearAll.addEventListener('click', () => {
-//     const getting = JSON.parse(localStorage.getItem('list'));
-//     const variable = document.getElementById('todos-list');
-//     for (let i = 0; i < variable.length; i += 1) {
-//       form.removeChild(variable[i]);
-//     }
-//     const empty = [];
-//     for (let i = 0; i < getting.length; i += 1) {
-//       if (getting[i].completed === true) {
-//         continue;
-//       }
-//       empty.push(getting[i]);
-//     }
-//     localStorage.setItem('list', JSON.stringify(empty));
-// });
-
-const clearAll = () => {
-    const localData = JSON.parse(localStorage.getItem('list'));
-    const todoContainer = document.getElementById('todos-list');
-    todoContainer.forEach(i => {
-        if(i.classList.contains('checked')){
-            deleteTodo(i)
-        }
-    });
-    let count = 0;
-    const data = todos.from(localData).filter(i => i.completed);
-    data.map(i => i.index = count += 1);
-    localStorage.setItem('list', JSON.stringify(data));
-}
-
-clearAllBtn.addEventListener('click' , clearAll);
-
 // SHOW A NOTIFICATION
 const showNotification = (msg) => {
   // change the message
@@ -186,4 +148,3 @@ const showNotification = (msg) => {
     notificationEl.classList.remove('notif-enter');
   }, 2000);
 }
-

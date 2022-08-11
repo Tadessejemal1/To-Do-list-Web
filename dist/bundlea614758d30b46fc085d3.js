@@ -626,7 +626,7 @@ var todoInput = document.getElementById('newtodo');
 var todosListEl = document.getElementById('todos-list');
 var notificationEl = document.querySelector('.notification');
 var refresh = document.getElementById('clear');
-var clearAllBtn = document.querySelector('button'); // VARS
+var clearAllBtn = document.querySelector('.clear-completed'); // VARS
 
 var todos = JSON.parse(localStorage.getItem('todos')) || [];
 var EditTodoId = -1; // 1st render
@@ -641,7 +641,6 @@ form.addEventListener('submit', function (event) {
 }); // clearAll todo lists when refresh the page
 
 refresh.addEventListener('click', function () {
-  localStorage.clear();
   location.reload();
 }); // SAVE TODO
 
@@ -733,43 +732,8 @@ var deleteTodo = function deleteTodo(todoId) {
 
   renderTodos();
   localStorage.setItem('todos', JSON.stringify(todos));
-}; // const clearAll = document.querySelector('.clear-completed');
-//   clearAll.addEventListener('click', () => {
-//     const getting = JSON.parse(localStorage.getItem('list'));
-//     const variable = document.getElementById('todos-list');
-//     for (let i = 0; i < variable.length; i += 1) {
-//       form.removeChild(variable[i]);
-//     }
-//     const empty = [];
-//     for (let i = 0; i < getting.length; i += 1) {
-//       if (getting[i].completed === true) {
-//         continue;
-//       }
-//       empty.push(getting[i]);
-//     }
-//     localStorage.setItem('list', JSON.stringify(empty));
-// });
+}; // SHOW A NOTIFICATION
 
-
-var clearAll = function clearAll() {
-  var localData = JSON.parse(localStorage.getItem('list'));
-  var todoContainer = document.getElementById('todos-list');
-  todoContainer.forEach(function (i) {
-    if (i.classList.contains('checked')) {
-      deleteTodo(i);
-    }
-  });
-  var count = 0;
-  var data = todos.from(localData).filter(function (i) {
-    return i.completed;
-  });
-  data.map(function (i) {
-    return i.index = count += 1;
-  });
-  localStorage.setItem('list', JSON.stringify(data));
-};
-
-clearAllBtn.addEventListener('click', clearAll); // SHOW A NOTIFICATION
 
 var showNotification = function showNotification(msg) {
   // change the message
@@ -785,4 +749,4 @@ var showNotification = function showNotification(msg) {
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle4ba72f2c7b8392b13d12.js.map
+//# sourceMappingURL=bundlea614758d30b46fc085d3.js.map
