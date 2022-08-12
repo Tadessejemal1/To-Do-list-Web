@@ -82,7 +82,7 @@ const saveTodo = () => {
         {
           value: todoValue,
           checked: false,
-          id:todos.length+1,
+          id:todos.length +1,
         },
       );
     }
@@ -131,12 +131,12 @@ todosListEl.addEventListener('click', (event) => {
 
 const clearAllBtn = document.querySelector('.clear-completed');
 const clearAll = () => {
-    const localData = JSON.parse(localStorage.getItem('todos'));
-    const data = localData.filter(i => !i.checked);
-    console.log(data);
-    localStorage.setItem('todos', JSON.stringify(data));
-    window.location.reload();
-    renderTodos();
-}
+  const localData = JSON.parse(localStorage.getItem('todos'));
+  const data = localData.filter(i => !i.checked);
+  console.log(data);
+  localStorage.setItem('todos', JSON.stringify(data));
+  window.location.reload();
+  renderTodos();
+};
 
-clearAllBtn.addEventListener('click' , clearAll);
+clearAllBtn.addEventListener('click', clearAll);

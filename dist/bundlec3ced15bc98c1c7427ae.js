@@ -661,9 +661,7 @@ var EditTodoId = -1; // clearAll todo lists when refresh the page
 refresh.addEventListener('click', function () {
   window.location.reload();
 });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (refresh); // 1st render
-// renderTodos();
-// EDIT A TODO
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (refresh); // EDIT A TODO
 
 var editTodo = function editTodo(todoId) {
   todoInput.value = todos[todoId].value;
@@ -774,32 +772,19 @@ todosListEl.addEventListener('click', function (event) {
 var clearAllBtn = document.querySelector('.clear-completed');
 
 var clearAll = function clearAll() {
-  var localData = JSON.parse(localStorage.getItem('todos')); // localData.forEach(i => {
-  //   console.log(i);
-  //     // if(i.classList.contains('checked')){
-  //     //     deleteTodo(i)
-  //     // }
-  // });
-  // let count = 0;
-
+  var localData = JSON.parse(localStorage.getItem('todos'));
   var data = localData.filter(function (i) {
     return !i.checked;
   });
-  console.log(data); // data.map(i => i.index = count += 1);
-
+  console.log(data);
   localStorage.setItem('todos', JSON.stringify(data));
   window.location.reload();
   renderTodos();
 };
 
-clearAllBtn.addEventListener('click', clearAll); // clearAllBtn.addEventListener('click', e => {
-//   // const todos = todos.find(todo => todo.id === todos)
-//   todos.tasks = todos.tasks.filter(task => !task.complete)
-//   renderTodos();
-//   saveTodo();
-// })
+clearAllBtn.addEventListener('click', clearAll);
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundled39e6a7c7643b1d38052.js.map
+//# sourceMappingURL=bundlec3ced15bc98c1c7427ae.js.map
