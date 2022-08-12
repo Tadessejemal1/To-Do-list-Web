@@ -1,4 +1,5 @@
-/* eslint no-unused-expressions: ["error", { "allowTernary": true }] */
+/* eslint-disable no-unused-expressions */
+expect(someTrueValue).to.be.true; 
 
 import './styles/main.scss';
 import showNotification from './modules/notification';
