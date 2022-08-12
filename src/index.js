@@ -82,7 +82,7 @@ const saveTodo = () => {
         {
           value: todoValue,
           checked: false,
-          id:todos.length +1,
+          id: todos.length + 1,
         },
       );
     }
