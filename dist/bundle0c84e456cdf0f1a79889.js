@@ -778,4 +778,4 @@ todosListEl.addEventListener('click', function (event) {
 
 /******/ })()
 ;
-//# sourceMappingURL=bundlee89d3c11136ef0af7be2.js.map
+//# sourceMappingURL=bundle0c84e456cdf0f1a79889.js.map

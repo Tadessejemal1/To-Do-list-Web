@@ -20,15 +20,15 @@ const editTodo = (todoId) => {
 
 // RENDER TODOS
 const renderTodos = () => {
-    if (todos.length === 0) {
-      todosListEl.innerHTML = '<center>Nothing to do!</center>';
-    return;
-    }
+  if (todos.length === 0) {
+   todosListEl.innerHTML = '<center>Nothing to do!</center>';
+  return;
+  }
     // CLEAR ELEMENT BEFORE A RE-RENDER
-    todosListEl.innerHTML = '';
-    // RENDER TODOS
-    todos.forEach((todo, index) => {
-      todosListEl.innerHTML += `
+  todosListEl.innerHTML = '';
+  // RENDER TODOS
+  todos.forEach((todo, index) => {
+    todosListEl.innerHTML += `
       <div class="todo" id=${index}>
         <i 
           class="bi ${todo.checked ? 'bi bi-check2-square' : 'bi bi-app'}"
@@ -40,7 +40,7 @@ const renderTodos = () => {
         <i class="bi bi-trash" data-action="delete"></i>
       </div>
       `;
-    });
+  });
 };
 
 // CHECK A TODO
@@ -76,9 +76,9 @@ const saveTodo = () => {
     } else {
       todos.push(
         {
-        value: todoValue,
-        checked: false,
-        color: '#' + Math.floor(Math.random() * 16777215).toString(16)
+          value: todoValue,
+          checked: false,
+          color: '#' + Math.floor(Math.random() * 16777215).toString(16)
         }
       );
     }
