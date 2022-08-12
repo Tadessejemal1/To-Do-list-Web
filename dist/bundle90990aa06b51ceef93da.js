@@ -724,7 +724,7 @@ var saveTodo = function saveTodo() {
       todos.push({
         value: todoValue,
         checked: false,
-        color: '#' + Math.floor(Math.random() * 16777215).toString(16)
+        color: '#' + ' ' + Math.floor(Math.random() * 16777215).toString(16)
       });
     }
 
@@ -790,4 +790,4 @@ todosListEl.addEventListener('click', function (event) {
 
 /******/ })()
 ;
-//# sourceMappingURL=bundled65bb310a381daafc0d4.js.map
+//# sourceMappingURL=bundle90990aa06b51ceef93da.js.map
