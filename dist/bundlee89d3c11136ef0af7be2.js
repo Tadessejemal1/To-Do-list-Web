@@ -680,6 +680,21 @@ var EditTodoId = -1; // 1st render
 var editTodo = function editTodo(todoId) {
   todoInput.value = todos[todoId].value;
   EditTodoId = todoId;
+}; // RENDER TODOS
+
+
+var renderTodos = function renderTodos() {
+  if (todos.length === 0) {
+    todosListEl.innerHTML = '<center>Nothing to do!</center>';
+    return;
+  } // CLEAR ELEMENT BEFORE A RE-RENDER
+
+
+  todosListEl.innerHTML = ''; // RENDER TODOS
+
+  todos.forEach(function (todo, index) {
+    todosListEl.innerHTML += "\n      <div class=\"todo\" id=".concat(index, ">\n        <i \n          class=\"bi ").concat(todo.checked ? 'bi bi-check2-square' : 'bi bi-app', "\"\n          style=\"color : ").concat(todo.color, "\"\n          data-action=\"check\"\n        ></i>\n        <p class=\"").concat(todo.checked ? 'checked' : '', "\" data-action=\"check\">").concat(todo.value, "</p>\n        <i class=\"bi bi-pencil-square\" data-action=\"edit\"></i>\n        <i class=\"bi bi-trash\" data-action=\"delete\"></i>\n      </div>\n      ");
+  });
 }; // CHECK A TODO
 
 
@@ -725,21 +740,6 @@ var saveTodo = function saveTodo() {
 
     todoInput.value = '';
   }
-}; // RENDER TODOS
-
-
-var renderTodos = function renderTodos() {
-  if (todos.length === 0) {
-    todosListEl.innerHTML = '<center>Nothing to do!</center>';
-    return;
-  } // CLEAR ELEMENT BEFORE A RE-RENDER
-
-
-  todosListEl.innerHTML = ''; // RENDER TODOS
-
-  todos.forEach(function (todo, index) {
-    todosListEl.innerHTML += "\n    <div class=\"todo\" id=".concat(index, ">\n      <i \n        class=\"bi ").concat(todo.checked ? 'bi bi-check2-square' : 'bi bi-app', "\"\n        style=\"color : ").concat(todo.color, "\"\n        data-action=\"check\"\n      ></i>\n      <p class=\"").concat(todo.checked ? 'checked' : '', "\" data-action=\"check\">").concat(todo.value, "</p>\n      <i class=\"bi bi-pencil-square\" data-action=\"edit\"></i>\n      <i class=\"bi bi-trash\" data-action=\"delete\"></i>\n    </div>\n    ");
-  });
 }; // FORM SUBMIT
 
 
@@ -778,4 +778,4 @@ todosListEl.addEventListener('click', function (event) {
 
 /******/ })()
 ;
-//# sourceMappingURL=bundlec4458047a3cff96bfd45.js.map
+//# sourceMappingURL=bundlee89d3c11136ef0af7be2.js.map

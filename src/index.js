@@ -12,11 +12,35 @@ let EditTodoId = -1;
 
 // 1st render
 // renderTodos();
-
 // EDIT A TODO
 const editTodo = (todoId) => {
   todoInput.value = todos[todoId].value;
   EditTodoId = todoId;
+};
+
+// RENDER TODOS
+const renderTodos = () => {
+    if (todos.length === 0) {
+      todosListEl.innerHTML = '<center>Nothing to do!</center>';
+    return;
+    }
+    // CLEAR ELEMENT BEFORE A RE-RENDER
+    todosListEl.innerHTML = '';
+    // RENDER TODOS
+    todos.forEach((todo, index) => {
+      todosListEl.innerHTML += `
+      <div class="todo" id=${index}>
+        <i 
+          class="bi ${todo.checked ? 'bi bi-check2-square' : 'bi bi-app'}"
+          style="color : ${todo.color}"
+          data-action="check"
+        ></i>
+        <p class="${todo.checked ? 'checked' : ''}" data-action="check">${todo.value}</p>
+        <i class="bi bi-pencil-square" data-action="edit"></i>
+        <i class="bi bi-trash" data-action="delete"></i>
+      </div>
+      `;
+    });
 };
 
 // CHECK A TODO
@@ -50,40 +74,17 @@ const saveTodo = () => {
       }));
       EditTodoId = -1;
     } else {
-      todos.push({
+      todos.push(
+        {
         value: todoValue,
         checked: false,
-        color: '#' + Math.floor(Math.random() * 16777215).toString(16),
-      });
+        color: '#' + Math.floor(Math.random() * 16777215).toString(16)
+        }
+      );
     }
 
     todoInput.value = '';
   }
-};
-
-// RENDER TODOS
-const renderTodos = () => {
-  if (todos.length === 0) {
-    todosListEl.innerHTML = '<center>Nothing to do!</center>';
-    return;
-}
-  // CLEAR ELEMENT BEFORE A RE-RENDER
-  todosListEl.innerHTML = '';
-  // RENDER TODOS
-  todos.forEach((todo, index) => {
-    todosListEl.innerHTML += `
-    <div class="todo" id=${index}>
-      <i 
-        class="bi ${todo.checked ? 'bi bi-check2-square' : 'bi bi-app'}"
-        style="color : ${todo.color}"
-        data-action="check"
-      ></i>
-      <p class="${todo.checked ? 'checked' : ''}" data-action="check">${todo.value}</p>
-      <i class="bi bi-pencil-square" data-action="edit"></i>
-      <i class="bi bi-trash" data-action="delete"></i>
-    </div>
-    `;
-  });
 };
 
 // FORM SUBMIT
@@ -112,7 +113,7 @@ todosListEl.addEventListener('click', (event) => {
   const todo = parentElement;
   const todoId = Number(todo.id);
   // target action
-  const action = target.dataset.action;
+  const { action } = target.dataset;
   action === 'check' && checkTodo(todoId);
   action === 'edit' && editTodo(todoId);
   action === 'delete' && deleteTodo(todoId);
