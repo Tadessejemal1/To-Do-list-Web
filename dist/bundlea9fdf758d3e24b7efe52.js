@@ -44,7 +44,9 @@ var refresh = document.getElementById('clear'); // clearAll todo lists when refr
 refresh.addEventListener('click', function () {
   location.reload();
 });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (refresh);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  refresh: refresh
+});
 
 /***/ }),
 
@@ -670,7 +672,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var form = document.getElementById('todoform');
 var todoInput = document.getElementById('newtodo');
-var todosListEl = document.getElementById('todos-list'); // VARS
+var todosListEl = document.getElementById('todos-list');
+var clearAllBtn = document.querySelector('.clear-completed'); // VARS
 
 var todos = JSON.parse(localStorage.getItem('todos')) || [];
 var EditTodoId = -1; // 1st render
@@ -774,8 +777,27 @@ todosListEl.addEventListener('click', function (event) {
   action === 'edit' && editTodo(todoId);
   action === 'delete' && deleteTodo(todoId);
 });
+
+var clearAll = function clearAll() {
+  var localData = JSON.parse(localStorage.getItem('todos'));
+  todosListEl.forEach(function (i) {
+    if (i.classList.contains('check')) {
+      deleteTodo(i);
+    }
+  });
+  var count = 0;
+  var data = todos.from(localData).filter(function (i) {
+    return !i.completed;
+  });
+  data.map(function (i) {
+    return i.index = count += 1;
+  });
+  localStorage.setItem('todos', JSON.stringify(data));
+};
+
+clearAllBtn.addEventListener('click', clearAll);
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle0c84e456cdf0f1a79889.js.map
+//# sourceMappingURL=bundlea9fdf758d3e24b7efe52.js.map

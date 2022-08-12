@@ -2,6 +2,6 @@ const refresh = document.getElementById('clear');
 
 // clearAll todo lists when refresh the page
 refresh.addEventListener('click', () => {
-  location.reload();
+  window.location.reload();
 });
-export default refresh;
+export default {refresh};

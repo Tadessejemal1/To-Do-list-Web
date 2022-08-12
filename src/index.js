@@ -2,10 +2,11 @@ import './styles/main.scss';
 import showNotification from './modules/notification';
 import refresh from './modules/todo';
 
+
 const form = document.getElementById('todoform');
 const todoInput = document.getElementById('newtodo');
 const todosListEl = document.getElementById('todos-list');
-
+const clearAllBtn = document.querySelector('.clear-completed');
 // VARS
 let todos = JSON.parse(localStorage.getItem('todos')) || [];
 let EditTodoId = -1;
@@ -118,3 +119,19 @@ todosListEl.addEventListener('click', (event) => {
   action === 'edit' && editTodo(todoId);
   action === 'delete' && deleteTodo(todoId);
 });
+
+// const clearAll = () => {
+//     const localData = JSON.parse(localStorage.getItem('todos'));
+//     todosListEl.forEach(i => {
+//         if(i.classList.contains('check')){
+//             deleteTodo(i)
+//         }
+//     });
+//     let count = 0;
+//     const data = todos.from(localData).filter(i => !i.completed);
+//     data.map(i => i.index = count += 1);
+//     localStorage.setItem('todos', JSON.stringify(data));
+// }
+
+// clearAllBtn.addEventListener('click' , clearAll);
+
