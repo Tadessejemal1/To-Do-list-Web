@@ -1,16 +1,21 @@
 import './styles/main.scss';
 import showNotification from './modules/notification';
-import refresh from './modules/todo';
-
 
 const form = document.getElementById('todoform');
 const todoInput = document.getElementById('newtodo');
 const todosListEl = document.getElementById('todos-list');
-const clearAllBtn = document.querySelector('.clear-completed');
+const refresh = document.getElementById('clear');
+
 // VARS
 let todos = JSON.parse(localStorage.getItem('todos')) || [];
 let EditTodoId = -1;
 
+// clearAll todo lists when refresh the page
+refresh.addEventListener('click', () => {
+  window.location.reload();
+});
+
+export default refresh;
 // 1st render
 // renderTodos();
 // EDIT A TODO
@@ -22,10 +27,10 @@ const editTodo = (todoId) => {
 // RENDER TODOS
 const renderTodos = () => {
   if (todos.length === 0) {
-   todosListEl.innerHTML = '<center>Nothing to do!</center>';
-  return;
+    todosListEl.innerHTML = '<center>Nothing to do!</center>';
+    return;
   }
-    // CLEAR ELEMENT BEFORE A RE-RENDER
+  // CLEAR ELEMENT BEFORE A RE-RENDER
   todosListEl.innerHTML = '';
   // RENDER TODOS
   todos.forEach((todo, index) => {
@@ -79,8 +84,8 @@ const saveTodo = () => {
         {
           value: todoValue,
           checked: false,
-          color: '#' + Math.floor(Math.random() * 16777215).toString(16)
-        }
+          color: '#' + Math.floor(Math.random() * 16777215).toString(16),
+        },
       );
     }
 
@@ -120,6 +125,7 @@ todosListEl.addEventListener('click', (event) => {
   action === 'delete' && deleteTodo(todoId);
 });
 
+// const clearAllBtn = document.querySelector('.clear-completed');
 // const clearAll = () => {
 //     const localData = JSON.parse(localStorage.getItem('todos'));
 //     todosListEl.forEach(i => {
