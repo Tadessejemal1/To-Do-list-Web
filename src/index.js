@@ -1,4 +1,4 @@
-/*eslint no-unused-expressions: ["error", { "allowTernary": true }]*/
+/* eslint no-unused-expressions: ["error", { "allowTernary": true }] */
 
 import './styles/main.scss';
 import showNotification from './modules/notification';
