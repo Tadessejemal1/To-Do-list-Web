@@ -773,9 +773,19 @@ var clearAllBtn = document.querySelector('.clear-completed');
 
 var clearAll = function clearAll() {
   var localData = JSON.parse(localStorage.getItem('todos'));
-  var data = localData.filter(function (i) {
+  var data = localData.filter(i = function (_i) {
+    function i() {
+      return _i.apply(this, arguments);
+    }
+
+    i.toString = function () {
+      return _i.toString();
+    };
+
+    return i;
+  }(function () {
     return !i.checked;
-  });
+  }));
   console.log(data);
   localStorage.setItem('todos', JSON.stringify(data));
   window.location.reload();
@@ -787,4 +797,4 @@ clearAllBtn.addEventListener('click', clearAll);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundlec3ced15bc98c1c7427ae.js.map
+//# sourceMappingURL=bundle96c442a3ce8f1d75699d.js.map
