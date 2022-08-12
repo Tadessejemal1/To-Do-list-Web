@@ -648,11 +648,10 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+// /* eslint-disable no-unused-expressions */
+// expect(someTrueValue).to.be.true;
 
 
-["error", {
-  "allowTernary": true
-}];
 var form = document.getElementById('todoform');
 var todoInput = document.getElementById('newtodo');
 var todosListEl = document.getElementById('todos-list');
@@ -761,7 +760,11 @@ todosListEl.addEventListener('click', function (event) {
   var todoId = Number(todo.id); // target action
 
   var action = target.dataset.action;
-  action === 'check' && checkTodo(todoId);
+
+  if (action === 'check') {
+    checkTodo(todoId);
+  }
+
   action === 'edit' && editTodo(todoId);
   action === 'delete' && deleteTodo(todoId);
 }); // const clearAllBtn = document.querySelector('.clear-completed');
@@ -782,4 +785,4 @@ todosListEl.addEventListener('click', function (event) {
 
 /******/ })()
 ;
-//# sourceMappingURL=bundled20b340dddc1e148a73f.js.map
+//# sourceMappingURL=bundlebf2a634372ee65388b38.js.map

@@ -1,9 +1,8 @@
-/* eslint-disable no-unused-expressions */
-expect(someTrueValue).to.be.true; 
+// /* eslint-disable no-unused-expressions */
+// expect(someTrueValue).to.be.true;
 
 import './styles/main.scss';
 import showNotification from './modules/notification';
-
 
 const form = document.getElementById('todoform');
 const todoInput = document.getElementById('newtodo');
@@ -124,7 +123,10 @@ todosListEl.addEventListener('click', (event) => {
   const todoId = Number(todo.id);
   // target action
   const { action } = target.dataset;
-  action === 'check' && checkTodo(todoId);
+  if(action ==='check') {
+    checkTodo(todoId)
+  }    
+  
   action === 'edit' && editTodo(todoId);
   action === 'delete' && deleteTodo(todoId);
 });
