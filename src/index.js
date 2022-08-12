@@ -1,5 +1,6 @@
 import './styles/main.scss';
 import showNotification from './modules/notification';
+["error", { "allowTernary": true }] 
 
 const form = document.getElementById('todoform');
 const todoInput = document.getElementById('newtodo');
@@ -140,4 +141,3 @@ todosListEl.addEventListener('click', (event) => {
 // }
 
 // clearAllBtn.addEventListener('click' , clearAll);
-

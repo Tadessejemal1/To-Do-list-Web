@@ -650,6 +650,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+["error", {
+  "allowTernary": true
+}];
 var form = document.getElementById('todoform');
 var todoInput = document.getElementById('newtodo');
 var todosListEl = document.getElementById('todos-list');
@@ -779,4 +782,4 @@ todosListEl.addEventListener('click', function (event) {
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle1da1700fe5ad339b0861.js.map
+//# sourceMappingURL=bundled20b340dddc1e148a73f.js.map
