@@ -66,7 +66,7 @@ const renderTodos = () => {
   if (todos.length === 0) {
     todosListEl.innerHTML = '<center>Nothing to do!</center>';
     return;
-  }
+}
   // CLEAR ELEMENT BEFORE A RE-RENDER
   todosListEl.innerHTML = '';
   // RENDER TODOS
@@ -105,8 +105,8 @@ const deleteTodo = (todoId) => {
 
 // CLICK EVENT LISTENER FOR ALL THE TODOS
 todosListEl.addEventListener('click', (event) => {
-  const target = event.target;
-  const parentElement = target.parentNode;
+  const { target } = event;
+  const { parentElement } = target;
   if (parentElement.className !== 'todo') return;
   // t o d o id
   const todo = parentElement;
