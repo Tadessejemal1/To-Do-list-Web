@@ -765,8 +765,13 @@ todosListEl.addEventListener('click', function (event) {
     checkTodo(todoId);
   }
 
-  action === 'edit' && editTodo(todoId);
-  action === 'delete' && deleteTodo(todoId);
+  if (action === 'edit') {
+    editTodo(todoId);
+  }
+
+  if (action === 'delete') {
+    deleteTodo(todoId);
+  }
 }); // const clearAllBtn = document.querySelector('.clear-completed');
 // const clearAll = () => {
 //     const localData = JSON.parse(localStorage.getItem('todos'));
@@ -785,4 +790,4 @@ todosListEl.addEventListener('click', function (event) {
 
 /******/ })()
 ;
-//# sourceMappingURL=bundlebf2a634372ee65388b38.js.map
+//# sourceMappingURL=bundled65bb310a381daafc0d4.js.map

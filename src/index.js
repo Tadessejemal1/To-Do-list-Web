@@ -123,12 +123,15 @@ todosListEl.addEventListener('click', (event) => {
   const todoId = Number(todo.id);
   // target action
   const { action } = target.dataset;
-  if(action ==='check') {
-    checkTodo(todoId)
-  }    
-  
-  action === 'edit' && editTodo(todoId);
-  action === 'delete' && deleteTodo(todoId);
+  if (action === 'check') {
+    checkTodo(todoId);
+  }
+  if (action === 'edit') {
+    editTodo(todoId);
+  }
+  if (action === 'delete') {
+    deleteTodo(todoId);
+  }
 });
 
 // const clearAllBtn = document.querySelector('.clear-completed');
