@@ -1,6 +1,7 @@
 # To Do App
 
 >  This project is using webpack to structure To-do-list app. It is a minimal implementation of a To Do list application
+>  ![image](https://user-images.githubusercontent.com/85793292/184426416-2edc8ed3-b2ad-400c-b5cb-e28b1c89b223.png)
 
 ## Built With
 
