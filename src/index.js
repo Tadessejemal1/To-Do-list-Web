@@ -27,7 +27,7 @@ const updateId = () => {
   for (let i = 0; i < todos.length; i += 1) {
     todos[i].id = i + 1;
   }
-}
+};
 
 // RENDER TODOS
 const renderTodos = () => {
