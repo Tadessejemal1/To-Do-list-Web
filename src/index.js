@@ -1,10 +1,10 @@
 import './styles/main.scss';
 import showNotification from './modules/notification';
+import refresh from './modules/todo';
 
 const form = document.getElementById('todoform');
 const todoInput = document.getElementById('newtodo');
 const todosListEl = document.getElementById('todos-list');
-const refresh = document.getElementById('clear');
 
 // VARS
 let todos = JSON.parse(localStorage.getItem('todos')) || [];
@@ -12,11 +12,6 @@ let EditTodoId = -1;
 
 // 1st render
 // renderTodos();
-
-// clearAll todo lists when refresh the page
-refresh.addEventListener('click', () => {
-  location.reload();
-});
 
 // EDIT A TODO
 const editTodo = (todoId) => {
@@ -101,12 +96,12 @@ form.addEventListener('submit', (event) => {
 
 // DELETE TODO
 const deleteTodo = (todoId) => {
-    todos = todos.filter((todo, index) => index !== todoId);
-    EditTodoId = -1;
-    // re-render
-    renderTodos();
-    localStorage.setItem('todos', JSON.stringify(todos));
-}
+  todos = todos.filter((todo, index) => index !== todoId);
+  EditTodoId = -1;
+  // re-render
+  renderTodos();
+  localStorage.setItem('todos', JSON.stringify(todos));
+};
 
 // CLICK EVENT LISTENER FOR ALL THE TODOS
 todosListEl.addEventListener('click', (event) => {
