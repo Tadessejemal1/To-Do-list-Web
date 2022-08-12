@@ -87,7 +87,7 @@ const saveTodo = () => {
         {
           value: todoValue,
           checked: false,
-          color: '#' + ' ' + Math.floor(Math.random() * 16777215).toString(16),
+          color: 'orange',
         },
       );
     }
