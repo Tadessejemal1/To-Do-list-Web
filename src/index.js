@@ -1,6 +1,3 @@
-// /* eslint-disable no-unused-expressions */
-// expect(someTrueValue).to.be.true;
-
 import './styles/main.scss';
 import showNotification from './modules/notification';
 
@@ -19,8 +16,6 @@ refresh.addEventListener('click', () => {
 });
 
 export default refresh;
-// 1st render
-// renderTodos();
 // EDIT A TODO
 const editTodo = (todoId) => {
   todoInput.value = todos[todoId].value;
@@ -87,7 +82,7 @@ const saveTodo = () => {
         {
           value: todoValue,
           checked: false,
-          color: 'orange',
+          id:todos.length+1,
         },
       );
     }
@@ -134,18 +129,14 @@ todosListEl.addEventListener('click', (event) => {
   }
 });
 
-// const clearAllBtn = document.querySelector('.clear-completed');
-// const clearAll = () => {
-//     const localData = JSON.parse(localStorage.getItem('todos'));
-//     todosListEl.forEach(i => {
-//         if(i.classList.contains('check')){
-//             deleteTodo(i)
-//         }
-//     });
-//     let count = 0;
-//     const data = todos.from(localData).filter(i => !i.completed);
-//     data.map(i => i.index = count += 1);
-//     localStorage.setItem('todos', JSON.stringify(data));
-// }
+const clearAllBtn = document.querySelector('.clear-completed');
+const clearAll = () => {
+    const localData = JSON.parse(localStorage.getItem('todos'));
+    const data = localData.filter(i => !i.checked);
+    console.log(data);
+    localStorage.setItem('todos', JSON.stringify(data));
+    window.location.reload();
+    renderTodos();
+}
 
-// clearAllBtn.addEventListener('click' , clearAll);
+clearAllBtn.addEventListener('click' , clearAll);
