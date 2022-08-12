@@ -22,6 +22,13 @@ const editTodo = (todoId) => {
   EditTodoId = todoId;
 };
 
+// updateId
+const updateId = () => {
+  for (let i = 0; i < todos.length; i += 1) {
+    todos[i].id = i + 1;
+  }
+}
+
 // RENDER TODOS
 const renderTodos = () => {
   if (todos.length === 0) {
@@ -103,6 +110,7 @@ form.addEventListener('submit', (event) => {
 const deleteTodo = (todoId) => {
   todos = todos.filter((todo, index) => index !== todoId);
   EditTodoId = -1;
+  updateId();
   // re-render
   renderTodos();
   localStorage.setItem('todos', JSON.stringify(todos));
@@ -131,12 +139,12 @@ todosListEl.addEventListener('click', (event) => {
 
 const clearAllBtn = document.querySelector('.clear-completed');
 const clearAll = () => {
-  const localData = JSON.parse(localStorage.getItem('todos'));
-  const data = localData.filter((i) => !i.checked);
-  console.log(data);
-  localStorage.setItem('todos', JSON.stringify(data));
-  window.location.reload();
+  // const localData = JSON.parse(localStorage.getItem('todos'));
+  todos = todos.filter((i) => !i.checked);
+  updateId();
+  localStorage.setItem('todos', JSON.stringify(todos));
   renderTodos();
 };
+renderTodos();
 
 clearAllBtn.addEventListener('click', clearAll);
